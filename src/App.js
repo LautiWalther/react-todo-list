@@ -5,6 +5,7 @@ import bootstrap from 'bootstrap';
 import ListItems from './components/ListItems';
 
 import { DataProvider } from './components/Context';
+import Input from './components/Input';
 
 function App() {
 
@@ -16,7 +17,9 @@ function App() {
             <div className="col text-center">
               <h3>React ToDo List</h3>
             </div>
-            <ListItems></ListItems>
+            <ListItems>
+              <Input></Input>
+            </ListItems>
           </div>
         </div>
       </DataProvider>

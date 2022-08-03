@@ -2,16 +2,26 @@
 	{
 		"id": 1,
 		"text": "TodoItem1",
-		"checked": true
+		"checked": false
 	},
 	{
 		"id": 2,
 		"text": "TodoItem2",
-		"checked": true
+		"checked": false
 	},
 	{
 		"id": 3,
 		"text": "TodoItem3",
 		"checked": true
+	},
+	{
+		"id": 4,
+		"text": "TodoItem4",
+		"checked": false
+	},
+	{
+		"id": 5,
+		"text": "TodoItem5",
+		"checked": false
 	}
 ]

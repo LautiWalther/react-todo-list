@@ -4,7 +4,7 @@ import Item from './Item';
 
 import {useData} from './Context';
 
-const ListItems = () => {
+const ListItems = ({children}) => {
 
   const data = useData();
 
@@ -32,6 +32,7 @@ const ListItems = () => {
           )
         })
     }
+    { children }
     </ul>
   )
 }
