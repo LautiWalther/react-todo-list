@@ -4,18 +4,22 @@ import bootstrap from 'bootstrap';
 
 import ListItems from './components/ListItems';
 
+import { DataProvider } from './components/Context';
+
 function App() {
 
   return (
     <>
-    <div className="container-sm bg-light">
-      <div className="row justify-content-center">
-        <div className="col text-center">
-          <h3>React ToDo List</h3>
+      <DataProvider>
+        <div className="container-sm bg-light">
+          <div className="row justify-content-center">
+            <div className="col text-center">
+              <h3>React ToDo List</h3>
+            </div>
+            <ListItems></ListItems>
+          </div>
         </div>
-        <ListItems></ListItems>
-      </div>
-    </div>
+      </DataProvider>
     </>
   );
 }

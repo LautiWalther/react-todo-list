@@ -1,31 +1,32 @@
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 
 import Item from './Item';
 
+import {useData} from './Context';
+
 const ListItems = () => {
 
-  const [list, setList] = useState([
-    {
-      id: 1,
-      text: 'TodoItem1',
-      checked: false
-    },
-    {
-      id: 2,
-      text: 'TodoItem2',
-      checked: false
-    },
-    {
-      id: 3,
-      text: 'TodoItem3',
-      checked: false
-    },
-  ]);
+  const data = useData();
+
+  useEffect(() => {
+    var ready = false
+
+    const fetchItems = async () => {
+      const response = await fetch('http://localhost:8000');
+      const json = await response.json();
+      if(!ready) {
+        data.setList(json.data);
+      }
+    }
+    fetchItems();
+
+    return () => ready = true;
+  }, [data.reload]);
 
   return (
     <ul className="list-group" style={{'padding': '0'}}>
       {
-        list.map(item => {
+        data.list.map(item => {
           return (
             <Item id={item.id} text={item.text} key={item.id}></Item>
           )
